@@ -1,12 +1,5 @@
 class Solution {
     public long sumAndMultiply(int n) {
-        long ans =0l;
-        for(var ch : String.valueOf(n).toCharArray()){
-            if(ch !='0'){
-                int val = (int)(ch -'0');
-                ans = ans *10 + val;
-            }
-        }
         int rev = getDigit(n);
         int sum = getDigit(rev);
         return getDigitSum(n)*1l * sum;
