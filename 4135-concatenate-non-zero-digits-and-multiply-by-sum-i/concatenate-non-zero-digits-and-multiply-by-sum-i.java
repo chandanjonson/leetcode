@@ -7,9 +7,9 @@ class Solution {
                 ans = ans *10 + val;
             }
         }
-        
-        return ans * getDigitSum(n);
-
+        int rev = getDigit(n);
+        int sum = getDigit(rev);
+        return getDigitSum(n)*1l * sum;
 
     }
     long getDigitSum(int n){
@@ -18,6 +18,16 @@ class Solution {
         while(n !=0){
           int mod = n%10;
           sum +=mod;
+          n /=10;
+        }
+        return sum;
+    }
+    int getDigit(int n){
+        int sum = 0;
+        while(n !=0){
+          int mod = n%10;
+          if(mod !=0)
+          sum  = sum *10 + mod;
           n /=10;
         }
         return sum;
